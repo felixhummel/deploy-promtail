@@ -3,7 +3,7 @@ default: docker
 
 .PHONY: docker
 docker:
-	promtail -dry-run -config.file docker.yml
+	INSTANCE=t promtail -dry-run -config.expand-env -config.file docker.yml
 	
 .PHONY: varlog
 varlog:
