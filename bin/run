@@ -1,0 +1,4 @@
+#!/bin/bash
+set -euo pipefail
+
+promtail -config.expand-env -config.file config.yml

@@ -1,0 +1,11 @@
+[Unit]
+Description=promtail
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/promtail -config.expand-env -config.file /opt/promtail/config.yml
+WorkingDirectory=/opt/promtail
+EnvironmentFile=/opt/promtail/.env
+
+[Install]
+WantedBy=multi-user.target

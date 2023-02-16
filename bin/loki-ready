@@ -1,0 +1,3 @@
+#!/bin/bash
+base=$(perl -pe 's|(https://.+?)/.*|$1|' <<< "$LOKI_URL")
+curl -u "${LOKI_BASIC_AUTH_USERNAME}:${LOKI_BASIC_AUTH_PASSWORD}" $base/ready
