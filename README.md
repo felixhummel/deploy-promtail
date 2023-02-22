@@ -42,7 +42,7 @@ set -o allexport; source .env; set +o allexport
 ```
 cp share/promtail.service /etc/systemd/system/
 systemctl daemon-reload
-systemctl enable promtail.service
-systemctl start promtail.service
+systemctl enable --now promtail.service
+
 journalctl -fu promtail
 ```
