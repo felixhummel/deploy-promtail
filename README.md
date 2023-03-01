@@ -46,3 +46,21 @@ systemctl enable --now promtail.service
 
 journalctl -fu promtail
 ```
+
+
+# LogCLI
+- docs: https://grafana.com/docs/loki/latest/tools/logcli/
+- install: https://github.com/felixhummel/provision/blob/main/logcli
+
+usage:
+```
+./bin/logcli-query '{ job="varlogs", filename!~"/var/log/gitlab/.*" }'
+
+# you can also use STDIN
+./bin/logcli-query <<'EOF'
+{
+  job="varlogs",
+  filename!~"/var/log/gitlab/.*"
+}
+EOF
+```

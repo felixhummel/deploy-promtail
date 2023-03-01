@@ -1,0 +1,12 @@
+#!/bin/bash
+set -euo pipefail
+
+query="${1:-$(</dev/stdin)}"
+
+LOKI_BASEURL="$(echo $LOKI_URL | sed -e 's;/loki/api/v1/push;;')"
+
+logcli query \
+  --username="$LOKI_BASIC_AUTH_USERNAME" \
+  --password="$LOKI_BASIC_AUTH_PASSWORD" \
+  --addr="$LOKI_BASEURL" \
+  --follow "$query"
