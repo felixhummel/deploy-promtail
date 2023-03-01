@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+source bin/activate
+
 query="${1:-$(</dev/stdin)}"
 
 LOKI_BASEURL="$(echo $LOKI_URL | sed -e 's;/loki/api/v1/push;;')"

@@ -24,16 +24,6 @@ EOF
 ```
 
 
-# Test Locally
-```
-cd /opt/promtail
-vi config.yml
-
-set -o allexport; source .env; set +o allexport
-./bin/dry-run
-```
-
-
 # Test Pushing to Loki
 ```
 ./bin/loki-ready
@@ -48,6 +38,16 @@ systemctl daemon-reload
 systemctl enable --now promtail.service
 
 journalctl -fu promtail
+```
+
+
+# Customize Configuration
+```
+cd /opt/promtail
+vi config.yml
+
+./bin/dry-run
+systemctl restart promtail.service
 ```
 
 
