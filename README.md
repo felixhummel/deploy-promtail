@@ -1,3 +1,6 @@
+Deploy Promtail the easy way.
+
+
 # Install Promtail
 ```
 git clone https://github.com/felixhummel/provision.git ~/1-provision
@@ -49,8 +52,8 @@ journalctl -fu promtail
 
 
 # LogCLI
-- docs: https://grafana.com/docs/loki/latest/tools/logcli/
-- install: https://github.com/felixhummel/provision/blob/main/logcli
+- [docs](https://grafana.com/docs/loki/latest/tools/logcli/)
+- [install](https://github.com/felixhummel/provision/blob/main/logcli)
 
 usage:
 ```
@@ -64,3 +67,7 @@ usage:
 }
 EOF
 ```
+
+
+# Documentation
+- [configuration](https://grafana.com/docs/loki/latest/clients/promtail/configuration/)
