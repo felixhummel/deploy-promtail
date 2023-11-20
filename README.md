@@ -15,7 +15,6 @@ git clone https://github.com/felixhummel/deploy-promtail /opt/promtail
 
 cd /opt/promtail
 cat <<EOF > .env
-CUSTOMER=bob
 INSTANCE=$HOSTNAME
 LOKI_URL=https://loki.example.com/loki/api/v1/push
 LOKI_BASIC_AUTH_USERNAME=alice

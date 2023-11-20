@@ -18,7 +18,6 @@ scrape_configs:
   - targets:
      - localhost
     labels:
-      customer: ${CUSTOMER}
       instance: ${INSTANCE}
       job: varlogs
       __path__: /var/log/**/*.log
@@ -28,8 +27,6 @@ scrape_configs:
 #   docker_sd_configs:
 #     - host: "unix:///var/run/docker.sock"
 #   relabel_configs:
-#     - target_label: 'customer'
-#       replacement: '${CUSTOMER}'
 #     - target_label: 'instance'
 #       replacement: '${INSTANCE}'
 #     - source_labels: ['__meta_docker_container_label_com_docker_compose_service']
